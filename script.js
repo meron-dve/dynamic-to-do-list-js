@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const addButton = document.getElementById("add-task-btn");
+    // Select DOM Elements
+    const addButton = document.getElementById("add-button");
     const taskInput = document.getElementById("task-input");
     const taskList = document.getElementById("task-list");
 
+    // Function to add tasks
     function addTask() {
         let taskText = taskInput.value.trim();
 
@@ -29,11 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
         taskInput.value = "";
     }
 
+    // Add button listener
     addButton.addEventListener("click", addTask);
 
+    // Enter key listener
     taskInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             addTask();
         }
     });
+
 });
